@@ -1,56 +1,28 @@
 import { motion } from "framer-motion"
-
-const skillCategories = [
-  {
-    title: "Salesforce",
-    skills: ["Apex", "Lightning Web Components", "SOQL/SOSL", "Flows & Process Automation", "Production Support", "Incident Management"],
-  },
-  {
-    title: "Web Development",
-    skills: ["React", "Node.js", "JavaScript", "HTML/CSS", "Tailwind CSS"],
-  },
-  {
-    title: "Core Strengths",
-    skills: ["Debugging & Root Cause Analysis", "Client Communication", "Team Leadership", "Cross-functional Collaboration"],
-  },
-]
+import Section, { Reveal } from "./Section"
+import { skillCategories } from "../data/profile"
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-8 max-w-5xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-12"
-      >
-        Skills
-      </motion.h2>
-      <div className="grid md:grid-cols-3 gap-10">
+    <Section id="skills" eyebrow="What I work with" title="Skills">
+      <div className="grid md:grid-cols-3 gap-6">
         {skillCategories.map((category, i) => (
-          <motion.div
-            key={category.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-          >
-            <h3 className="text-blue-400 font-semibold mb-4">{category.title}</h3>
-            <ul className="space-y-2">
+          <Reveal key={category.title} delay={i * 0.12} className="rounded-xl border border-gray-800 bg-gray-900/40 p-6">
+            <h3 className="text-blue-400 font-semibold mb-5">{category.title}</h3>
+            <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
-                <motion.li
+                <motion.span
                   key={skill}
-                  whileHover={{ x: 6, color: "#60a5fa" }}
-                  className="text-gray-300 cursor-default transition-colors"
+                  whileHover={{ y: -3 }}
+                  className="text-sm text-gray-200 bg-gray-800/80 border border-gray-700 hover:border-blue-500 px-3 py-1.5 rounded-lg cursor-default transition-colors"
                 >
                   {skill}
-                </motion.li>
+                </motion.span>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </Reveal>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }
