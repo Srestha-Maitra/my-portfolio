@@ -27,7 +27,7 @@ npm run dev       # open http://localhost:5173
 | Add a job / project         | add an object to `experience` / `projects`             |
 | Hide "Open to opportunities"| set `openToWork: false`                                |
 
-To change the photo, replace `src/assets/Hero_Image2.jpg` (keep the filename or update the import in `src/components/Hero.jsx`).
+To change the photo, replace `src/assets/profile.jpg` (keep the filename or update the import in `src/components/Hero.jsx`).
 
 The contact form needs no backend: it opens the visitor's email app with the message pre-filled to `profile.email`.
 

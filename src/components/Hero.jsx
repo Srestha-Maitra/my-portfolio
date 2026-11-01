@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import heroImage from "../assets/Hero_Image2.jpg"
+import heroImage from "../assets/profile.jpg"
 import { profile, stats } from "../data/profile"
 
 const fadeUp = (delay) => ({
@@ -92,7 +92,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 blur-2xl opacity-40" />
             <motion.img
               src={heroImage}
-              alt={`Illustrated portrait of ${profile.shortName}`}
+              alt={`Photo of ${profile.name}`}
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-gray-900 ring-2 ring-blue-500/40"
